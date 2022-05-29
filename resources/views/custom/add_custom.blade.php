@@ -5,7 +5,7 @@
     <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-                    <h2> Thêm người khách hàng </h2>
+                    <h2> Thêm ngườiaaaaaa khách hàng </h2>
                     @error('msg')
 	                <div class="text-danger" >{{ $message }}</div>
                     @enderror
