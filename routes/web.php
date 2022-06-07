@@ -2,13 +2,13 @@
 use Illuminate\Support\Facades\Route;
 
 //front end 
-Route::get('/trang-chu', [HomeController::class,'index']);
+Route::get('/trang-chu', [App\Http\Controllers\HomeController::class,'index']);
 route::get('/',[HomeController::class,'index']);
 route::get('home',[HomeController::class, 'myhome']);
 
 //backend
 Route::get('/login','App\Http\Controllers\AdminController@index');
-Route::post ('/admin-dashboard','App\Http\Controllers\AdminController@dashboard');
+Route::get ('/admin-dashboard','App\Http\Controllers\AdminController@dashboard');
 route::get ('/admin-layout','App\Http\Controllers\AdminController@admin_layout');
 
 //users
@@ -30,7 +30,6 @@ Route::get('/all-category-product','App\Http\Controllers\CategoryProduct@all_cat
 Route::post('/save-category-product','App\Http\Controllers\CategoryProduct@save_category_product');
 Route::post('/update-category-product/{category_id}','App\Http\Controllers\CategoryProduct@update_category_product');
 Route::get('/all-edit-category-product','App\Http\Controllers\CategoryProduct@show_category');//tim kiem san pham
-
 
 //cusstom
 route::get('/all-edit-custom','App\Http\Controllers\CustomController@all_custom');//tât ca
