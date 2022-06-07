@@ -3,12 +3,12 @@ use Illuminate\Support\Facades\Route;
 
 //front end 
 Route::get('/trang-chu', [App\Http\Controllers\HomeController::class,'index']);
-route::get('/',[HomeController::class,'index']);
+route::post('/',[HomeController::class,'index']);
 route::get('home',[HomeController::class, 'myhome']);
 
 //backend
 Route::get('/login','App\Http\Controllers\AdminController@index');
-Route::get ('/admin-dashboard','App\Http\Controllers\AdminController@dashboard');
+Route::post ('/admin-dashboard','App\Http\Controllers\AdminController@dashboard');
 route::get ('/admin-layout','App\Http\Controllers\AdminController@admin_layout');
 
 //users
