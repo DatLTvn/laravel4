@@ -2,9 +2,9 @@
 use Illuminate\Support\Facades\Route;
 
 //front end 
-Route::get('/trang-chu', [App\Http\Controllers\HomeController::class,'index']);
+Route::get('/', [App\Http\Controllers\HomeController::class,'index']);
 // route::post('/',[HomeController::class,'index']);
-route::get('home',[HomeController::class, 'myhome']);
+// route::get('home',[HomeController::class, 'myhome']);
 
 //backend
 Route::get('/login','App\Http\Controllers\AdminController@index');
