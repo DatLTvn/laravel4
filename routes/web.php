@@ -3,7 +3,7 @@ use Illuminate\Support\Facades\Route;
 
 //front end 
 Route::get('/trang-chu', [App\Http\Controllers\HomeController::class,'index']);
-route::post('/',[HomeController::class,'index']);
+// route::post('/',[HomeController::class,'index']);
 route::get('home',[HomeController::class, 'myhome']);
 
 //backend
