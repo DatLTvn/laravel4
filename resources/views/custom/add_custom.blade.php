@@ -58,4 +58,15 @@
                 </div>  
             </section>
     </div>
+    <style>
+        .panel{
+            background-color: white !important
+    
+        }
+    </style>
+      <style>
+        body {
+            background: white
+        }
+    </style>
 @endsection

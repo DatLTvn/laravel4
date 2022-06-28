@@ -1,5 +1,6 @@
 @extends('admin_layout')
 @section('admin_content')
+
     <h2>Xây dựng quản lí users</h2>
     <br>
     <!-- Filter  -->
@@ -27,9 +28,9 @@
                     <option value="0">Tạm khóa</option>
                 </select>
             </div>
+        </div>
     </form>
-    <br>
-    </div>
+    
     </div>
     <br>
     <!-- Actions  -->
@@ -37,8 +38,8 @@
         <a href="{{ URL::to('/add-users') }}">
             <button type="button" style="width:150px" class="btn btn-primary">Thêm mới</button>
         </a>
-        <button type="submit" form="frm_filter" class="btn btn-primary mb-3 pull-right">Search</button>
-        <a href="{{ URL::to('/all-users') }}" class="btn btn-primary mb-3 mr-3 pull-right">Clear</a>
+        <button type="submit" form="frm_filter" class="btn btn-primary  pull-right">Search</button>
+        <a href="{{ URL::to('/all-users') }}" class="btn btn-primary  mr-3 pull-right">Clear</a>
     </div>
     <br>
     </div>
@@ -58,7 +59,7 @@
         <h5>Danh sách người dùng</h5>
     </div>
     <!-- User Table-->
-    <div>
+    <>
         <table class="table">
             <thead>
                 <tr>
@@ -103,4 +104,9 @@
             </ul>
         </div>
     </div>
+    <style>
+        body {
+            background: white
+        }
+    </style>
 @endsection

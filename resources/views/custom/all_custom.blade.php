@@ -39,8 +39,8 @@
         <button style="width:150px" class="btn btn-success">Import CSV</button>
         <button style="width:100px" class="btn btn-success">Export</button>
 
-        <button type="submit" form="frm_filter" class="btn btn-primary mb-3  pull-right">Tìm kiếm</button>
-        <a href="{{ URL::to('/all-custom') }}" class="btn btn-success mb-3 mr-3 pull-right "> Xóa tìm</a>
+        <button type="submit" form="frm_filter" class="btn btn-primary  pull-right">Tìm kiếm</button>
+        <a href="{{ URL::to('/all-custom') }}" class="btn btn-success  mr-3 pull-right "> Xóa tìm</a>
     </div>
     <br>
     <!-- Pagination-->
@@ -93,4 +93,9 @@
             </ul>
         </div>
     </div>
+    <style>
+        body {
+            background: white
+        }
+    </style>
 @endsection

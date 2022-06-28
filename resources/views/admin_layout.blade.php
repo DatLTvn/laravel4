@@ -13,9 +13,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
 <link href='{{asset('public/backend/css/style.css')}}' rel='stylesheet' type='text/css' />
-<link href="css/style-responsive.css" rel="stylesheet"/>
+<link href="{{asset('public/css/style-responsive.css')}}" rel="stylesheet"/>
 <!-- font CSS -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='{{asset('public/fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic')}}' rel='stylesheet' type='text/css'>
 <!-- font-awesome icons -->
 <link rel="stylesheet" href='{{asset("public/backend/css/font.css")}}' type="text/css"/>
 <link href="{{asset('public/backend/css/font-awesome.css')}}" rel="stylesheet"> 
@@ -24,7 +24,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="{{asset("public/backend/css/monthly.css")}}">
 <!-- //calendar -->
 <!-- //font-awesome icons -->
-<script src="{{asset("public/>backend/js/jquery2.0.3.min.js")}}"></script>
+<script src="{{asset("public/backend/js/jquery2.0.3.min.js")}}"></script>
 <script src="{{asset("public/backend/js/raphael-min.js")}}"></script>
 <script src="{{asset("public/backend/js/morris.js")}}"></script>
 </head>
@@ -34,8 +34,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
-    <a href="index.html" class="logo">
-        VISITORS
+    <a href="#" class="logo">
+        ADMIN
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
@@ -74,7 +74,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a class="active" href="index.html">
+                    <a class="active" href="#">
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
@@ -86,13 +86,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Danh mục</span>
                     </a>
                     <ul class="sub">
-						<li><a href="{{URL::to('/all-category-product')}}">Sản phẩm</a></li>
+                        <li><a href="{{URL::to('/all-category')}}">Loại sản phẩm</a></li>
+						<li><a href="{{URL::to('/products')}}">Tất cả sản phẩm</a></li>
 						<li><a href="{{URL::to('/all-custom')}}">Khách hàng</a></li>
                         <li><a href="{{URL::to('/all-users')}}">Người dùng</a></li>
                     </ul>
-                </li>
-
-                    <a href="login.html">
+                </li>       
+                    <a href="#">
                         <i class="fa fa-user"></i>
                         <span>Login Page</span>
                     </a>
@@ -212,7 +212,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});		
 	</script>
 </body>
-
 
 </html>
 
