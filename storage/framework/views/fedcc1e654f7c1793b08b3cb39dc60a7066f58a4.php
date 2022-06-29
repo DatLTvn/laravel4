@@ -31,7 +31,6 @@
                             </div>
                           </div>
                     </div>
-                     
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
@@ -42,7 +41,6 @@
             height: 100px !important;
             width: 120px !important;
         }
-
         .grid_1_of_4 {
             margin: 4px 4px !important;
         }

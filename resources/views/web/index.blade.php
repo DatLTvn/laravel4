@@ -32,7 +32,6 @@
                             </div>
                           </div>
                     </div>
-                     
                     @endforeach
                 </div>
             </div>
@@ -43,7 +42,6 @@
             height: 100px !important;
             width: 120px !important;
         }
-
         .grid_1_of_4 {
             margin: 4px 4px !important;
         }

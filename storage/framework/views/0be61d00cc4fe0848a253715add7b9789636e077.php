@@ -7,10 +7,10 @@
                         <div class="wrapper">
                             <div class="row">
                                 <div class=" col-md-6">
-                                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                    <div id="carouselExampleControls" class="carousel slide" style="width: 100%" data-ride="carousel">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
-                                                <img class="d-block w-100" src="../public/upload/chitiet1.jpg"
+                                                <img class="d-block w-100" src="<?php echo e('../public/upload/' .  $cate_detail->product_file); ?>"
                                                     alt="First slide">
                                             </div>
                                             <?php $__currentLoopData = $img_detail; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -29,14 +29,18 @@
                                     <p class="vote"><strong>100%</strong> hàng <strong>Chất lượng</strong>, đảm bảo
                                         <strong>Uy tín</strong>!
                                     </p>
-                                    <br>
+                                    <div class="form-group">
+                                        <label for="soluong">Số lượng đặt mua:</label>
+                                        <input type="number" class="form-control" id="soluong" name="soluong_chitiet" min="0">
+                                    </div>
                                     <div class="action">
-                                        <a href="<?php echo e(URL::to('/#')); ?>">
+                                        <a href="<?php echo e(URL::to('#')); ?>">
                                             <button type="button" style="width:180px" class="btn btn-danger">Thêm vào giỏ
                                                 hàng</button>
                                         </a>
                                     </div>
                                     <br>
+                                   
                                     <div class="card">
                                         <div class="container-fluid">
                                             <h3>Thông tin về sản phẩm</h3>
@@ -70,7 +74,6 @@
         </div>
 
         </div>
-      
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('user_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\relaravel\resources\views/categories/detail.blade.php ENDPATH**/ ?>

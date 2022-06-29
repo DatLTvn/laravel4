@@ -3,12 +3,10 @@
     <h2>Xây dựng quản lí sản phẩm</h2>
     <br>
     <div>
-        
         <a href="<?php echo e(URL::to('/add-category')); ?>">
             <button type="button" style="width:150px" class="btn btn-primary">Thêm mới</button>
         </a>
     </div>
-
     <!-- <Pagination-->
     <div class="text-center">
         <ul class="pagination justify-content-center">
