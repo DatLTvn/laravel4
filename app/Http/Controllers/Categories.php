@@ -30,5 +30,5 @@ class Categories extends Controller
         $img_detail = DB::table('img_product')->where('product_id',$id)->get();
         return view('categories.detail', compact('cate_detail', 'img_detail'));
     }
-
+    
 }
