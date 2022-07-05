@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
     <h1>Responsive Checkout Form</h1>
     <div class="row">
         <div class="col-75">
