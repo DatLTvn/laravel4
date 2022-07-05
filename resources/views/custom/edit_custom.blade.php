@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     @foreach($edit_custom as $key => $edit_valuecustom)
                     <div class="position-center">
-                        <form role="form" action = "{{URL::to('/update-custom/'.$edit_valuecustom->custom_id)}}" method="post">
+                        <form role="form" action = "{{URL::to('panel/update-custom/'.$edit_valuecustom->custom_id)}}" method="post">
                             {{csrf_field()}}
                         <div class="form-group">
                             <br>

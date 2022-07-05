@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\DB;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,7 +25,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-        Paginator::useBootstrap();
+        try{
+            Paginator::useBootstrap();
+            $categoryGlobal = DB::table('tbl_all_category_product')->get();
+        }catch(\Exception $e){
+        }
+        \View()->share('categoryGlobal',$categoryGlobal ?? []);
+
     }
 }

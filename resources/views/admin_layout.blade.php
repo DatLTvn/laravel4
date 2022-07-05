@@ -8,14 +8,13 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-{{-- <link rel="stylesheet" href='{{asset("public/backend/css/bootstrap.min.css")}}' > --}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
 <link href='{{asset('public/backend/css/style.css')}}' rel='stylesheet' type='text/css' />
-<link href="css/style-responsive.css" rel="stylesheet"/>
+<link href="{{asset('public/css/style-responsive.css')}}" rel="stylesheet"/>
 <!-- font CSS -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='{{asset('public/fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic')}}' rel='stylesheet' type='text/css'>
 <!-- font-awesome icons -->
 <link rel="stylesheet" href='{{asset("public/backend/css/font.css")}}' type="text/css"/>
 <link href="{{asset('public/backend/css/font-awesome.css')}}" rel="stylesheet"> 
@@ -34,8 +33,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <header class="header fixed-top clearfix">
 <!--logo start-->
 <div class="brand">
-    <a href="index.html" class="logo">
-        VISITORS
+    <a href="#" class="logo">
+        ADMIN
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
@@ -74,7 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a class="active" href="index.html">
+                    <a class="active" href="#">
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
@@ -86,13 +85,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Danh mục</span>
                     </a>
                     <ul class="sub">
-						<li><a href="{{URL::to('/all-category-product')}}">Sản phẩm</a></li>
-						<li><a href="{{URL::to('/all-custom')}}">Khách hàng</a></li>
-                        <li><a href="{{URL::to('/all-users')}}">Người dùng</a></li>
+                        <li><a href="{{route('admin.all_category')}}">Loại sản phẩm</a></li>
+						<li><a href="{{route('admin.products')}}">Tất cả sản phẩm</a></li>
+						<li><a href="{{route('custom.all_custom')}}">Khách hàng</a></li>
+                        <li><a href="{{route('users.all_users')}}">Người dùng</a></li>
                     </ul>
-                </li>
-
-                    <a href="login.html">
+                </li>       
+                    <a href="#">
                         <i class="fa fa-user"></i>
                         <span>Login Page</span>
                     </a>
@@ -211,8 +210,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		});		
 	</script>
-</body>
 
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.zoom.min.js"></script>
+    <script src="js/jquery.dd.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+  
+</body>
 
 </html>
 

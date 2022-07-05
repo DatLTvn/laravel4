@@ -11,7 +11,7 @@
                     @enderror
                 </header>
                 <div class="panel-body">
-                    <form role="form" action = "{{URL::to('/save-custom')}}" method="post">
+                    <form role="form" action = "{{URL::to('/panel/save-custom')}}" method="post">
                         {{csrf_field()}}
                     <div class="position-center">
                         <form role="form">
@@ -58,4 +58,15 @@
                 </div>  
             </section>
     </div>
+    <style>
+        .panel{
+            background-color: white !important
+    
+        }
+    </style>
+      <style>
+        body {
+            background: white
+        }
+    </style>
 @endsection

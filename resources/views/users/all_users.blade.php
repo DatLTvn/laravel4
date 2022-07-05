@@ -1,9 +1,10 @@
 @extends('admin_layout')
 @section('admin_content')
+
     <h2>Xây dựng quản lí users</h2>
     <br>
     <!-- Filter  -->
-    <form id="frm_filter" action="{{ URL::to('/all-custom') }}" method="GET">
+    <form id="frm_filter" action="{{ URL::to('/panel/all-custom') }}" method="GET">
         {{ csrf_field() }}
 
         <div class="row">
@@ -27,18 +28,18 @@
                     <option value="0">Tạm khóa</option>
                 </select>
             </div>
+        </div>
     </form>
-    <br>
-    </div>
+    
     </div>
     <br>
     <!-- Actions  -->
     <div>
-        <a href="{{ URL::to('/add-users') }}">
+        <a href="{{route('users.add_users')}}">
             <button type="button" style="width:150px" class="btn btn-primary">Thêm mới</button>
         </a>
-        <button type="submit" form="frm_filter" class="btn btn-primary mb-3 pull-right">Search</button>
-        <a href="{{ URL::to('/all-users') }}" class="btn btn-primary mb-3 mr-3 pull-right">Clear</a>
+        <button type="submit" form="frm_filter" class="btn btn-primary  pull-right">Search</button>
+        <a href="{{route('users.all_users')}}" class="btn btn-primary  mr-3 pull-right">Clear</a>
     </div>
     <br>
     </div>
@@ -58,15 +59,15 @@
         <h5>Danh sách người dùng</h5>
     </div>
     <!-- User Table-->
-    <div>
+    <>
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Họ tên</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Nhóm</th>
-                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Số điện thoại</th>
+                    <th scope="col">Địa chỉ</th>
                 </tr>
             </thead>
             <tbody>
@@ -76,18 +77,18 @@
                             <th scope="row">{{ $loop->index + 1 }}</th>
                             <td>{{ $users->users_name }}</td>
                             <td>{{ $users->users_gmail }}</td>
-                            <td>{{ $users->users_group }}</td>
-                            <td>{{ $users->users_desc }}</td>
+                            <td>{{ $users->users_phone }}</td>
+                            <td>{{ $users->users_address }}</td>
                             <td>
-                                <a href="{{ URL::to('/edit-users/' . $users->users_id) }}" class="active"
+                                <a href="{{ URL::to('/panel/edit-users/' . $users->users_id) }}" class="active"
                                     ui-toggle-class="">
                                     <i class="fa fa-edit blue-color"></i></a>
                                 <a onclick="return confirm(' Bạn có muốn khóa người dùng này?')"
-                                    href="{{ URL::to('/all-users') }}" class="active"
+                                    href="{{ URL::to('/panel/all-users') }}" class="active"
                                     ui-toggle-class="">
                                     <i class="fa fa-user-times"></i></a>
                                 <a onclick="return confirm(' Ban co muon xoa?')"
-                                    href="{{ URL::to('/delete-users/' . $users->users_id) }}" class="active"
+                                    href="{{ URL::to('/panel/delete-users/' . $users->users_id) }}" class="active"
                                     ui-toggle-class="">
                                     <i class="fa fa-trash"></i></a>
                             </td>
@@ -103,4 +104,9 @@
             </ul>
         </div>
     </div>
+    <style>
+        body {
+            background: white
+        }
+    </style>
 @endsection

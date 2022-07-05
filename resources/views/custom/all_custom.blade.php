@@ -3,7 +3,7 @@
     <h2>Xây dựng quản lí khách hàng</h2>
     <br>
     <!-- Filter  -->
-    <form id="frm_filter" action="{{ URL::to('/all-custom') }}" method="GET">
+    <form id="frm_filter" action="{{ URL::to('/panel/all-custom') }}" method="GET">
         {{ csrf_field() }}
 
         <div class="row">
@@ -33,14 +33,14 @@
     <br>
     <!-- Actions  -->
     <div>
-        <a href="{{ URL::to('/add-custom') }}">
+        <a href="{{ URL::to('/panel/add-custom') }}">
             <button type="button" style="width:150px" class="btn btn-primary">Thêm mới</button>
         </a>
         <button style="width:150px" class="btn btn-success">Import CSV</button>
         <button style="width:100px" class="btn btn-success">Export</button>
 
-        <button type="submit" form="frm_filter" class="btn btn-primary mb-3  pull-right">Tìm kiếm</button>
-        <a href="{{ URL::to('/all-custom') }}" class="btn btn-success mb-3 mr-3 pull-right "> Xóa tìm</a>
+        <button type="submit" form="frm_filter" class="btn btn-primary  pull-right">Tìm kiếm</button>
+        <a href="{{ URL::to('/panel/all-custom') }}" class="btn btn-success  mr-3 pull-right "> Xóa tìm</a>
     </div>
     <br>
     <!-- Pagination-->
@@ -80,7 +80,7 @@
                         <td>{{ $custom->custom_address }}</td>
                         <td>{{ $custom->custom_phone }}</td>
                         <td>
-                            <a href="{{ URL::to('/edit-custom/' . $custom->custom_id) }}" class="active"
+                            <a href="{{ URL::to('/panel/edit-custom/' . $custom->custom_id) }}" class="active"
                                 ui-toggle-class="">
                                 <i class="fa fa-edit blue-color"></i></a>
                     </tr>
@@ -93,4 +93,9 @@
             </ul>
         </div>
     </div>
+    <style>
+        body {
+            background: white
+        }
+    </style>
 @endsection
