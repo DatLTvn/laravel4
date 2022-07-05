@@ -34,7 +34,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-		<form action="<?php echo e(URL::to('/admin-dashboard')); ?>" method="post">
+		<form action="<?php echo e(route('login')); ?>" method="post">
 			<?php echo e(csrf_field()); ?>
 
 			<input type="text" class="ggg" name="admin_email" placeholder="Điền email" required="">  

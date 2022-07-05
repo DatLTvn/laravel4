@@ -4,7 +4,7 @@
     <h2>Xây dựng quản lí users</h2>
     <br>
     <!-- Filter  -->
-    <form id="frm_filter" action="<?php echo e(URL::to('/all-custom')); ?>" method="GET">
+    <form id="frm_filter" action="<?php echo e(URL::to('/panel/all-custom')); ?>" method="GET">
         <?php echo e(csrf_field()); ?>
 
 
@@ -36,11 +36,11 @@
     <br>
     <!-- Actions  -->
     <div>
-        <a href="<?php echo e(URL::to('/add-users')); ?>">
+        <a href="<?php echo e(route('users.add_users')); ?>">
             <button type="button" style="width:150px" class="btn btn-primary">Thêm mới</button>
         </a>
         <button type="submit" form="frm_filter" class="btn btn-primary  pull-right">Search</button>
-        <a href="<?php echo e(URL::to('/all-users')); ?>" class="btn btn-primary  mr-3 pull-right">Clear</a>
+        <a href="<?php echo e(route('users.all_users')); ?>" class="btn btn-primary  mr-3 pull-right">Clear</a>
     </div>
     <br>
     </div>
@@ -68,8 +68,8 @@
                     <th scope="col">#</th>
                     <th scope="col">Họ tên</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Nhóm</th>
-                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Số điện thoại</th>
+                    <th scope="col">Địa chỉ</th>
                 </tr>
             </thead>
             <tbody>
@@ -79,18 +79,18 @@
                             <th scope="row"><?php echo e($loop->index + 1); ?></th>
                             <td><?php echo e($users->users_name); ?></td>
                             <td><?php echo e($users->users_gmail); ?></td>
-                            <td><?php echo e($users->users_group); ?></td>
-                            <td><?php echo e($users->users_desc); ?></td>
+                            <td><?php echo e($users->users_phone); ?></td>
+                            <td><?php echo e($users->users_address); ?></td>
                             <td>
-                                <a href="<?php echo e(URL::to('/edit-users/' . $users->users_id)); ?>" class="active"
+                                <a href="<?php echo e(URL::to('/panel/edit-users/' . $users->users_id)); ?>" class="active"
                                     ui-toggle-class="">
                                     <i class="fa fa-edit blue-color"></i></a>
                                 <a onclick="return confirm(' Bạn có muốn khóa người dùng này?')"
-                                    href="<?php echo e(URL::to('/all-users')); ?>" class="active"
+                                    href="<?php echo e(URL::to('/panel/all-users')); ?>" class="active"
                                     ui-toggle-class="">
                                     <i class="fa fa-user-times"></i></a>
                                 <a onclick="return confirm(' Ban co muon xoa?')"
-                                    href="<?php echo e(URL::to('/delete-users/' . $users->users_id)); ?>" class="active"
+                                    href="<?php echo e(URL::to('/panel/delete-users/' . $users->users_id)); ?>" class="active"
                                     ui-toggle-class="">
                                     <i class="fa fa-trash"></i></a>
                             </td>

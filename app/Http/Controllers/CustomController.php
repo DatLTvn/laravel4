@@ -61,7 +61,7 @@ class CustomController extends Controller
             // $data['category_status'] =$request->category_product_status; //or
             DB::table('tbl_all_custom') ->insert($data);
             session()->put('message','Them nguoi dung thanh cong');
-            return Redirect::to('all-custom');
+            return Redirect::to('panel/all-custom');
          }
     }
 
@@ -97,8 +97,7 @@ class CustomController extends Controller
              'custom_address' => $custom_address
          ]);
          return view('admin_layout')->with([
-             'custom.all_custom' => $manege_customer
-         ]);
+             'custom.all_custom' => $manege_customer]);
      } 
 
       //update users
@@ -118,7 +117,7 @@ class CustomController extends Controller
         $data['custom_address'] =$request->custom_address;
         DB::table('tbl_all_custom') -> where ('custom_id',$custom_id)->update($data);
         session()->put('message','Cap nhat nguoi dung thanh cong');
-        return Redirect::to('/all-custom'); 
+        return Redirect::to('panel/all-custom'); 
      }
 
     //edit    

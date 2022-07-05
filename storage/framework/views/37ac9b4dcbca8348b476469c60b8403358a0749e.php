@@ -13,7 +13,7 @@
 </div>
 <div class>
     <h4>Danh sách sản phẩm </h4>
-    <a href="<?php echo e(URL::to('/add-product')); ?>">
+    <a href="<?php echo e(route('admin.add_product')); ?>">
         <button type="button" style="width:150px" class="btn btn-primary">Thêm mới</button>
     </a>
 </div>

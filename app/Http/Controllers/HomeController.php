@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -64,7 +65,7 @@ class HomeController extends Controller
         return view('web.news');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $result = DB::table('products')->get();
         return view('web.index', compact('result'));
@@ -72,7 +73,6 @@ class HomeController extends Controller
 
     public function detail()
     {
-        dd("ASd");
         $ketqua = DB::table('products')->get();
         return view('categories.detail', compact('ketqua'));
     }

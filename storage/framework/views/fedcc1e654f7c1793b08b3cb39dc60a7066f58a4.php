@@ -23,11 +23,12 @@
                     <div class="col-3">
                         <div class="card">
                             <div class="image-bg" style="background-image: url(<?php echo e('public/upload/' . $item->product_file); ?>)"></div>
-                            
                             <div class="card-body">
                               <p class="card-title fw-bold"><?php echo e($item->product_name); ?></p>
                               <p class="card-text"><?php echo e(number_format($item->product_price )); ?> vnđ</p>
-                              <a href="<?php echo e(URL::to('/detail/' . $item->id)); ?>" class="btn btn-danger">Add to cart</a>
+                              <a href="<?php echo e(URL::to('/detail/' . $item->id)); ?>" class="btn btn-danger">Detail Product</a>
+                              
+                              
                             </div>
                           </div>
                     </div>
@@ -45,6 +46,7 @@
             margin: 4px 4px !important;
         }
     </style>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('user_layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\relaravel\resources\views/web/index.blade.php ENDPATH**/ ?>

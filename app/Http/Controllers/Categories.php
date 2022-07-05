@@ -30,5 +30,15 @@ class Categories extends Controller
         $img_detail = DB::table('img_product')->where('product_id',$id)->get();
         return view('categories.detail', compact('cate_detail', 'img_detail'));
     }
-    
+
+    public function add_to_cart(Request $request){
+        $name = $request->product_name;
+        $qty = $request->product_qty;
+        $price = $request->product_price;
+    }
+
+    public function list_info(){
+        return view('categories.list_info');
+    }
+
 }

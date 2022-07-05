@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <?php $__currentLoopData = $edit_custom; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $edit_valuecustom): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="position-center">
-                        <form role="form" action = "<?php echo e(URL::to('/update-custom/'.$edit_valuecustom->custom_id)); ?>" method="post">
+                        <form role="form" action = "<?php echo e(URL::to('panel/update-custom/'.$edit_valuecustom->custom_id)); ?>" method="post">
                             <?php echo e(csrf_field()); ?>
 
                         <div class="form-group">

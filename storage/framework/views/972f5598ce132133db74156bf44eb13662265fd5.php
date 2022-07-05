@@ -3,7 +3,7 @@
     <h2>Xây dựng quản lí khách hàng</h2>
     <br>
     <!-- Filter  -->
-    <form id="frm_filter" action="<?php echo e(URL::to('/all-custom')); ?>" method="GET">
+    <form id="frm_filter" action="<?php echo e(URL::to('/panel/all-custom')); ?>" method="GET">
         <?php echo e(csrf_field()); ?>
 
 
@@ -34,14 +34,14 @@
     <br>
     <!-- Actions  -->
     <div>
-        <a href="<?php echo e(URL::to('/add-custom')); ?>">
+        <a href="<?php echo e(URL::to('/panel/add-custom')); ?>">
             <button type="button" style="width:150px" class="btn btn-primary">Thêm mới</button>
         </a>
         <button style="width:150px" class="btn btn-success">Import CSV</button>
         <button style="width:100px" class="btn btn-success">Export</button>
 
         <button type="submit" form="frm_filter" class="btn btn-primary  pull-right">Tìm kiếm</button>
-        <a href="<?php echo e(URL::to('/all-custom')); ?>" class="btn btn-success  mr-3 pull-right "> Xóa tìm</a>
+        <a href="<?php echo e(URL::to('/panel/all-custom')); ?>" class="btn btn-success  mr-3 pull-right "> Xóa tìm</a>
     </div>
     <br>
     <!-- Pagination-->
@@ -82,7 +82,7 @@
                         <td><?php echo e($custom->custom_address); ?></td>
                         <td><?php echo e($custom->custom_phone); ?></td>
                         <td>
-                            <a href="<?php echo e(URL::to('/edit-custom/' . $custom->custom_id)); ?>" class="active"
+                            <a href="<?php echo e(URL::to('/panel/edit-custom/' . $custom->custom_id)); ?>" class="active"
                                 ui-toggle-class="">
                                 <i class="fa fa-edit blue-color"></i></a>
                     </tr>

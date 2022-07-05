@@ -3,7 +3,7 @@
     <h2>Xây dựng quản lí sản phẩm</h2>
     <br>
     <div>
-        <a href="<?php echo e(URL::to('/add-category')); ?>">
+        <a href="<?php echo e(route('admin.add_category')); ?>">
             <button type="button" style="width:150px" class="btn btn-primary">Thêm mới</button>
         </a>
     </div>

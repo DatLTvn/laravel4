@@ -18,7 +18,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                 </header>
                 <div class="panel-body">
-                    <form role="form" action = "<?php echo e(URL::to('/save-custom')); ?>" method="post">
+                    <form role="form" action = "<?php echo e(URL::to('/panel/save-custom')); ?>" method="post">
                         <?php echo e(csrf_field()); ?>
 
                     <div class="position-center">

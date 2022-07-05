@@ -10,7 +10,7 @@
         <br>
         <div class="panel-body">
             <div class="position">
-                <form action="{{ URL::to('/save-category') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin.save_category') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{-- <div class="row"> --}}
                     <div class="row">

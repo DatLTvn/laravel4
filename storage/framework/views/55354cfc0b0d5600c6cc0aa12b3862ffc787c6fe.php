@@ -17,7 +17,7 @@ unset($__errorArgs, $__bag); ?>
         <br>
         <div class="panel-body">
             <div class="position">
-                <form action="<?php echo e(URL::to('/save-category')); ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo e(route('admin.save_category')); ?>" method="post" enctype="multipart/form-data">
                     <?php echo e(csrf_field()); ?>
 
                     

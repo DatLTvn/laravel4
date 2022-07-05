@@ -13,10 +13,28 @@
     <script type="text/javascript" src="<?php echo e(asset('public/web/js/startstop-slider.js')); ?>"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-<style>
 
-</style>
+    <!-- Google Font cart -->
+    <link href="public/listinfo/https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles cart-->
+    <link rel="stylesheet" href="<?php echo e(asset('public/listinfo/css/bootstrap.min.css')); ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(asset('public/listinfo/css/font-awesome.min.css')); ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(asset('public/listinfo/css/themify-icons.css')); ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(asset('public/listinfo/css/elegant-icons.css')); ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(asset('public/listinfo/css/owl.carousel.min.css')); ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(asset('public/listinfo/css/nice-select.css')); ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(asset('public/listinfo/css/jquery-ui.min.css')); ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(asset('public/listinfo/css/slicknav.min.css')); ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(asset('public/listinfo/css/style.css')); ?>" type="text/css">
+    <style>
+        #change-item-cart table tbody tr td img {
+            width: 70px;
+        }
+    </style>
+</head>
+
 <body>
     <div class="wrap">
         <div class="header">
@@ -26,10 +44,16 @@
                 </div>
                 <div class="account_desc">
                     <ul>
-                        <li><a href="#">Register</a></li>
-                        <li><a href="<?php echo e(URL::to('/login')); ?>">Login</a></li>
+                        <?php if(Session::get('user')): ?>
+                            <li><a href="<?php echo e(route('logout')); ?>">Hello <?php echo e(Session::get('user')->users_name); ?></a>
+                            </li>
+                        <?php else: ?>
+                            <li><a href="<?php echo e(URL::to('/sign-in-users')); ?>">Register</a></li>
+                            <li><a href="<?php echo e(URL::to('/login-users')); ?>">Login</a></li>
+                        <?php endif; ?>
+
+                        <li><a href="<?php echo e(route('cart')); ?>">View Cart</a></li>
                         <li><a href="#">Delivery</a></li>
-                        <li><a href="#">Checkout</a></li>
                         <li><a href="#">My Account</a></li>
                     </ul>
                 </div>
@@ -40,14 +64,18 @@
                     <a href="<?php echo e(URL::to('/')); ?>"><img src="<?php echo e(asset('public/web/images/logo.png')); ?>"
                             alt="" /></a>
                 </div>
-                <div class="cart">
-                    <p>Welcome to our Online Store! <span>Cart:</span>
-                    <div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
-                        <ul class="dropdown">
-                            <li>you have no items in your Shopping cart</li>
-                        </ul>
+                <div class="container">
+                    <div class="inner-header">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2">
+                                <div class="logo">
+                                    <a href="#">
+                                        <img src="img/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    </p>
                 </div>
                 <script type="text/javascript">
                     function DropDown(el) {
@@ -74,6 +102,9 @@
                 </script>
                 <div class="clear"></div>
             </div>
+
+
+
             <div class="header_bottom">
                 <div class="menu">
                     <ul style="margin-bottom: 0;">
@@ -102,7 +133,6 @@
                                         href="<?php echo e(route('category', $item->category_slug)); ?>"><?php echo e($item->category_name); ?></a>
                                 </li>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
                         </ul>
                     </div>
                 </div>
@@ -224,7 +254,8 @@
                                             src="<?php echo e(asset('public/smartphone/images/twitter.png')); ?>"
                                             alt="" /></a></li>
                                 <li><a href="#" target="_blank"><img
-                                            src="<?php echo e(asset('public/smartphone/images/skype.png')); ?>" alt="" />
+                                            src="<?php echo e(asset('public/smartphone/images/skype.png')); ?>"
+                                            alt="" />
                                     </a></li>
                                 <li><a href="#" target="_blank"> <img
                                             src="<?php echo e(asset('public/smartphone/images/dribbble.png')); ?>"
@@ -242,15 +273,68 @@
                 <p>Company Name © All rights Reseverd | Design by <a href="http://isource.vn">Isource</a> </p>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        
+        
+        <!-- Js Plugins -->
+        <script src="<?php echo e(asset('public/listinfo/js/jquery-3.3.1.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('public/listinfo/js/bootstrap.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('public/listinfo/js/jquery-ui.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('public/listinfo/js/jquery.countdown.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('public/listinfo/js/jquery.nice-select.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('public/listinfo/js/jquery.zoom.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('public/listinfo/js/jquery.dd.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('public/listinfo/js/jquery.slicknav.js')); ?>"></script>
+        <script src="<?php echo e(asset('public/listinfo/js/owl.carousel.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('public/listinfo/js/main.js')); ?>"></script>
+
+        <!-- JavaScript -->
+        <script src="public/listinfo//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet"
+            href="<?php echo e(asset('public/listinfo//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css')); ?>" />
+        <!-- Default theme -->
+        <link rel="stylesheet"
+            href="<?php echo e(asset('public/listinfo//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css')); ?>" />
+        <!-- Semantic UI theme -->
+        <link rel="stylesheet"
+            href="<?php echo e(asset('public/listinfo//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css')); ?>" />
+        <!-- Bootstrap theme -->
+        <link rel="stylesheet"
+            href="<?php echo e(asset('public/listinfo//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css')); ?>" />
+        <!-- Javacript -->
+        <script>
+            function AddCart(id) {
+                $.ajax({
+                    url: 'add-cart/' + id,
+                    type: 'GET',
+                }).done(function(response) {
+                    $("#change-item-cart").empty();
+                    $("#change-item-cart").html(response);
+                    alertify.success('Đã thêm mới sản phẩm');
+                });
+            }
+
+            $("#change-item-cart").on("click", ".si-close i", function() {
+                $.ajax({
+                    url: 'delete-item-card/' + $(this).data('id'),
+                    type: 'GET',
+                }).done(function(response) {
+                    $("#change-item-cart").empty();
+                    $("#change-item-cart").html(response);
+                    alertify.error('Đã xóa sản phẩm thành công');
+                });
+            });
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-        </script>
+
+
+        <?php
+        $error = Session::get('error');
+        if ($error) {
+            echo "<script type='text/javascript'>alert('$error');</script>";
+            Session::forget('error');
+        }
+        ?>
 </body>
 
 </html>
